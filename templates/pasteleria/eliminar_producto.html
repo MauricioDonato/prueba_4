@@ -1,0 +1,10 @@
+<form action="{% url 'pasteleria:eliminador_producto' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="id_eliminado" value="{{eliminador.id}}" hidden>
+    <br>
+    <input type="text" name="nombre_e" value="{{eliminador.nombre_pro}}" disabled>
+    <br>
+    <input type="text" name="nombre_e" value="{{eliminador.precio_pro}}" disabled>
+    <br>
+    <input type="submit" value="eliminar">
+</form>

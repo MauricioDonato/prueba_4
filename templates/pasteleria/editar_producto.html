@@ -1,0 +1,13 @@
+<form action="{% url 'pasteleria:editador_producto' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="id_editor" value="{{producto.id}}" hidden>
+    <br>
+    <input type="text" name="nombre_editor" value="{{producto.nombre_pro}}" >
+    <br>
+    <input type="text" name="precio_editor" value="{{producto.precio_pro}}">
+    <br>
+
+    <input type="submit" value="editar">
+</form>
+<a href="{% url 'pasteleria:index' %}">volver a pagina inicial</a>
+<a href="{% url 'pasteleria:frm_buscar_comuna' %}">volver al buscador</a>

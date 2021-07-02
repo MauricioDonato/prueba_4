@@ -1,0 +1,25 @@
+<form action="{% url 'pasteleria:eliminador_cliente' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="id_eliminado" value="{{eliminador.id}}" hidden>
+    <br>
+    <input type="text" name="rut_e" value="{{eliminador.rut}}"  disabled>
+    <br>
+    <input type="text" name="nombre_e" value="{{eliminador.nombre_cli}}" disabled>
+    <br>
+    <input type="text" name="apellido_e"value="{{eliminador.apellido_cli}}" disabled>
+    <br>
+    <input type="text" name="dirrecion" value="{{eliminador.direccion}}" disabled>
+    <br>
+    <input type="text" name="comuna" value="{{eliminador.comuna}}" disabled>
+    <br>
+    <input type="text" name="Fecha_nacimiento_e" value="{{eliminador.fecha_nac}}" disabled>
+    <br> 
+    <input type="text" name="correo_e" value="{{eliminador.correo}}" disabled>
+    <br>
+    <input type="password" value="{{eliminador.contrasena}}" disabled >
+    <br>
+    
+    <input type="submit" value="eliminar">
+</form>
+<a href="{% url 'pasteleria:index' %}">volver a pagina inicial</a>
+<a href="{% url 'pasteleria:frm_buscar_cliente' %}">volver al buscador</a>

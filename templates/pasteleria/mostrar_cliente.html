@@ -1,0 +1,24 @@
+{% if listado %}
+<ul>
+    {% for c in listado %}
+    <li>{{c.id}}) rut: {{ c.rut }}, nombre= {{c.nombre_cli}} ,
+
+        apellido= {{c.apellido_cli}} , correo= {{c.correo}}</li>
+
+    <form action="{% url 'pasteleria:eliminar_cliente' %}" method="POST" >
+        {% csrf_token %}
+        <input type="number" name="id_e" value="{{c.id}}" hidden  >
+        <input type="submit" value="Eliminar" >
+    </form>
+    <form action="{% url 'pasteleria:editar_cliente' %}" method="POST">
+        {% csrf_token %}
+        <input type="number" name="id_d" value="{{c.id}}" hidden >
+        <input type="submit" value="Editar">
+    </form>
+
+    {% endfor %}
+</ul>
+{% else %}
+<p>Sin información</p>
+{% endif %}
+<a href="{% url 'pasteleria:index' %}">volver a pagina inicial</a>

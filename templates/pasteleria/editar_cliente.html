@@ -1,0 +1,33 @@
+<form action="{% url 'pasteleria:editador_cliente' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="id_editor" value="{{editar.id}}" hidden>
+    <br>
+    <input type="text" name="rut_editor" value="{{editar.rut}}" >
+    <br>
+    <input type="text" name="nombre_editor" value="{{editar.nombre_cli}}" >
+    <br>
+    <input type="text" name="apellido_editor"value="{{editar.apellido_cli}}" >
+    <br>
+    <input type="date" name="Fecha_nacimiento_editor" value="{{editar.fecha_nac}}" >
+    <br>
+    <input type="text" name="correo_editor" value="{{editar.correo}}" >
+    <br>
+    <input type="text" name="dirrecion"  value="{{editar.direccion}}" placeholder="calle 1234" required>
+    <br>
+    <select name="comuna" required>
+        <option value="">Seleccionar</option>
+        {% for c in comuna %}
+        <option value="{{ c.id }}">{{ c.nombre_c }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <input type="password" name='contrasena_editor' value="{{editar.contrasena}}" >
+
+    <br>
+    <input type="password" name='validar_contrasena_editor' value="{{editar.contrasena}}" >
+    <br>
+    
+    <input type="submit" value="editar">
+</form>
+<a href="{% url 'pasteleria:index' %}">volver a pagina inicial</a>
+<a href="{% url 'pasteleria:frm_buscar_cliente' %}">volver al buscador</a>

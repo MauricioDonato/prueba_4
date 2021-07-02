@@ -1,0 +1,8 @@
+<form action="{% url 'pasteleria:registrar_producto' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="nombre_producto" placeholder="torta de chocolate"  required >
+    <br>
+    <input type="number" name="precio_producto" placeholder="$7000">
+    <br>
+    <input type="submit" value="Guardar">
+</form>

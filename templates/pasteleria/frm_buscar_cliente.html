@@ -1,0 +1,6 @@
+<h1>Buscar cliente</h1>
+<form action="{% url 'pasteleria:buscar_y_mostrar_cliente' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="rut_b" placeholder="123456789">
+    <input type="submit" value="Buscar">
+</form>

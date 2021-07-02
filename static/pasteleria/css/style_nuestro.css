@@ -1,0 +1,60 @@
+.color_verde{
+  background-color: aqua;
+}
+.color_menu{
+  background-color: lightpink;
+}
+.color_letra{
+    color: white;
+}
+
+.color_letar{
+  color: black;
+}
+.logo{
+  width: 5%;
+  float: left;
+  margin-right: 5%;
+  
+}
+.frm_comuna{
+    margin-top: 10%;
+    margin-left: 20%;
+    background-color: lightpink;
+    
+}
+.borde_mostrar{
+
+    margin-top: 5%;
+    
+}
+
+.centrar{
+    margin-top: 15%;
+    margin-left: 32%;
+}
+.mover_I_25{
+    margin-top: 10%;
+    margin-left: 25%;
+}
+.boton_com{
+    margin-left: 40%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+.boton_e{
+    margin-left: 30%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+.color_index{
+  margin-left: 4%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: lightpink;
+}
+.error{
+  color: red;
+  visibility: hidden;
+ 
+}
