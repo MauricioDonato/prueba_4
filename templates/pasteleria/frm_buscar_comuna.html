@@ -40,7 +40,7 @@
 <form action="{% url 'pasteleria:buscar_y_mostrar_comuna' %}" method="POST">
     {% csrf_token %}
     <div class="row mover_I_25">
-    <h4 col-sm-2 mt-2>comuna:</h4>
+    <h4 class="col-sm-2 mt-2" >comuna:</h4>
     <input type="text" name="nombre_buscar" class="col-sm-4 ml-1 form-control" placeholder="Maipú">
     </div>
     <input type="submit" class="btn btn-primary  boton_com" value="Buscar">

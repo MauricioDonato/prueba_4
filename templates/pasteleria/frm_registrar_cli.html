@@ -1,27 +1,80 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'pasteleria/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'pasteleria/css/style_nuestro.css' %}">
+<div>
+    <nav class="navbar navbar-expand-lg  color_menu">
+        <div class="container">
+            <img id="imagen" class="logo" src="{% static 'pasteleria/img/logo_cafe.png' %}">
+            <a class="navbar-brand color_letar" href="#">Cake House</a>
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link color_letar" href="Home.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown color_letar">
+                        <a class="nav-link dropdown-toggle color_letar" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Productos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item color_letar" href="Pagina2.html">Torta de Maracuya</a>
+                            <a class="dropdown-item color_letar" href="Pagina2.1.html">Kuchen Durazo y Frambuesas</a>
+                            <a class="dropdown-item color_letar" href="Pagina2.2.html">Cupcakes Frambuesa y Chocolate</a>
+                    <li>
+                    <li class="nav-item">
+                        <a class="nav-link color_letar" href="Registro.html">Registrarse</a>
+                    </li>
+
+
+                    <a class="nav-link color_letar" href="login.html">Iniciar sesion</a>
+                    </li>
+
+
+                    </li>
+                </ul>
+            </div>
+    </nav>
+</div>
+<div class="container col-sm-7 mt-2 frm_comuna" style="margin-bottom: 10%;"> 
+    <h1 class="centrar color_letar">Ingresar Cliente</h1>
 <form action="{% url 'pasteleria:registrar_cliente' %}" method="post">
     {% csrf_token %}
-    <input type="text" name="rut" placeholder="123456789"  required>
+    <div class="row mover_I_25" style="margin-left: 5%; margin-right: 10%;">
+        <h5 class="col-sm-2 mt-1 color_letar">rut:</h5>
+    <input type="text" name="rut" class="col-sm-4 form-control" placeholder="123456789"  required>
+
+    <h5 class="col-sm-2 mt-1 color_letar">nombre:</h5>
+    <input type="text" name="nombre" class="col-sm-4 form-control"  placeholder="Juan" required>
     <br>
-    <input type="text" name="nombre" placeholder="Juan" required>
+    </div>
+    <div class="row mover_I_25" style="margin-left: 5%; margin-right: 10%;">
+        <h5 class="col-sm-2 mt-1 color_letar">apellido:</h5>
+    <input type="text" name="apellido" placeholder="Campos"  class="col-sm-4 form-control" required>
+        <h5 class="col-sm-2 mt-1 color_letar">Fecha de nacimiento:</h5>
+    <input type="date" name="Fecha_nacimiento" class="col-sm-4 form-control" required>
     <br>
-    <input type="text" name="apellido" placeholder="Campos" required>
-    <br>
-    <input type="date" name="Fecha_nacimiento" required>
-    <br>
-    <input type="text" name="correo" placeholder="correo@algo.com" required>
-    <br>
-    <input type="text" name="dirrecion" placeholder="calle 1234" required>
-    <br>
-    <select name="comuna" required>
+    </div>
+    <div class="row mover_I_25" style="margin-left: 5%; margin-right: 10%;">
+        <h5 class="col-sm-2 mt-1 color_letar">Correo:</h5>
+    <input type="text" class="col-sm-4 form-control" name="correo" placeholder="correo@algo.com" required>
+        <h5 class="col-sm-2 mt-1 color_letar">dirrecion:</h5>
+    <input type="text" name="dirrecion" class="col-sm-4 form-control" placeholder="calle 1234" required>
+    </div>
+    <div class="row mover_I_25" style="margin-left: 5%; margin-right: 10%;">
+        <h5 class="col-sm-2 mt-1 color_letar">Comuna:</h5>
+    <select class="col-sm-4 form-control" name="comuna" required>
         <option value="">Seleccionar</option>
-        {% for c in comuna %}
+         {% for c in comuna %}
         <option value="{{ c.id }}">{{ c.nombre_c }}</option>
         {% endfor %}
     </select>
-    <br>
-    <input type="password" name="contrasena" placeholder="Contraseña" required >
-    <br>
-    <input type="password" name="validar_contrasena" placeholder="Validar Contraseña" required >
-    <br>
-    <input type="submit" value="Guardar">
+    </div>
+    <div class="row mover_I_25" style="margin-left: 5%; margin-right: 10%;">
+        <h5 class="col-sm-2 mt-1 color_letar">Contraseña:</h5>
+    <input type="password" name="contrasena" class="col-sm-4 form-control" placeholder="Contraseña" required >
+    <h5 class="col-sm-2 mt-1 color_letar">Contraseña validar:</h5>
+    <input type="password" name="validar_contrasena" class="col-sm-4 form-control" placeholder="Validar Contraseña" required >
+    <br></div>
+    <input type="submit"  class="btn btn-primary  boton_com" value="      Guardar     ">
 </form>
+</div>

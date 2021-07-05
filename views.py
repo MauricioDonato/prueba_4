@@ -12,6 +12,9 @@ from itertools import cycle
 def index(request):
 
     return render(request, 'pasteleria/index.html',)
+def home(request):
+
+    return render(request, 'pasteleria/home.html',)
 
 def frm_registrar_cli(request):
     comuna = Comuna.objects.all()

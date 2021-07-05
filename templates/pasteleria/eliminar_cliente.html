@@ -1,25 +1,75 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'pasteleria/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'pasteleria/css/style_nuestro.css' %}">
+<div>
+    <nav class="navbar navbar-expand-lg  color_menu">
+        <div class="container">
+            <img id="imagen" class="logo" src="{% static 'pasteleria/img/logo_cafe.png' %}">
+            <a class="navbar-brand color_letar" href="#">Cake House</a>
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link color_letar" href="Home.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown color_letar">
+                        <a class="nav-link dropdown-toggle color_letar" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Productos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item color_letar" href="Pagina2.html">Torta de Maracuya</a>
+                            <a class="dropdown-item color_letar" href="Pagina2.1.html">Kuchen Durazo y Frambuesas</a>
+                            <a class="dropdown-item color_letar" href="Pagina2.2.html">Cupcakes Frambuesa y Chocolate</a>
+                    <li>
+                    <li class="nav-item">
+                        <a class="nav-link color_letar" href="Registro.html">Registrarse</a>
+                    </li>
+
+
+                    <a class="nav-link color_letar" href="login.html">Iniciar sesion</a>
+                    </li>
+
+
+                    </li>
+                </ul>
+            </div>
+    </nav>
+</div>
+<div class="container col-sm-7 mt-2 frm_comuna" style="margin-bottom: 10%;"> 
+    <h1 class="centrar color_letar">Ingresar Cliente</h1>
 <form action="{% url 'pasteleria:eliminador_cliente' %}" method="post">
     {% csrf_token %}
+    <div class="row mover_I_25" style="margin-left: 5%; margin-right: 10%;">
     <input type="text" name="id_eliminado" value="{{eliminador.id}}" hidden>
-    <br>
-    <input type="text" name="rut_e" value="{{eliminador.rut}}"  disabled>
-    <br>
-    <input type="text" name="nombre_e" value="{{eliminador.nombre_cli}}" disabled>
-    <br>
-    <input type="text" name="apellido_e"value="{{eliminador.apellido_cli}}" disabled>
-    <br>
-    <input type="text" name="dirrecion" value="{{eliminador.direccion}}" disabled>
-    <br>
-    <input type="text" name="comuna" value="{{eliminador.comuna}}" disabled>
-    <br>
-    <input type="text" name="Fecha_nacimiento_e" value="{{eliminador.fecha_nac}}" disabled>
-    <br> 
-    <input type="text" name="correo_e" value="{{eliminador.correo}}" disabled>
-    <br>
-    <input type="password" value="{{eliminador.contrasena}}" disabled >
-    <br>
+    <h5 class="col-sm-2 mt-1 color_letar">rut:</h5>
+    <input type="text" class="col-sm-4 form-control" name="rut_e" value="{{eliminador.rut}}"  disabled>
+    <h5 class="col-sm-2 mt-1 color_letar">nombre:</h5>
+    <input type="text" name="nombre_e" class="col-sm-4 form-control" value="{{eliminador.nombre_cli}}" disabled>
+    </div>
+    <div class="row mover_I_25" style="margin-left: 5%; margin-right: 10%;">
+        <h5 class="col-sm-2 mt-1 color_letar">apellido:</h5>
+        <input type="text" class="col-sm-4 form-control" name="apellido_e"value="{{eliminador.apellido_cli}}" disabled>
+        <h5 class="col-sm-2 mt-1 color_letar">dirrecion:</h5>
+    <input type="text" class="col-sm-4 form-control" name="dirrecion" value="{{eliminador.direccion}}" disabled>
+    <br></div>
+    <div class="row mover_I_25" style="margin-left: 5%; margin-right: 10%;">
+    <h5 class="col-sm-2 mt-1 color_letar">comuna:</h5>
+    <input type="text" class="col-sm-4 form-control" name="comuna" value="{{eliminador.comuna}}" disabled>
+    <h5 class="col-sm-2 mt-1 color_letar">fecha:</h5>
+    <input type="text" class="col-sm-4 form-control" name="Fecha_nacimiento_e" value="{{eliminador.fecha_nac}}" disabled>
+    </div>
+    <div class="row mover_I_25" style="margin-left: 5%; margin-right: 10%;">
+        <h5 class="col-sm-2 mt-1 color_letar">Correo:</h5>
+    <input type="text" class="col-sm-4 form-control" name="correo_e" value="{{eliminador.correo}}" disabled>
+    <h5 class="col-sm-2 mt-1 color_letar">Contraseña:</h5>
+    <input class="col-sm-4 form-control" type="password" value="{{eliminador.contrasena}}" disabled >
+    </div>
     
-    <input type="submit" value="eliminar">
-</form>
-<a href="{% url 'pasteleria:index' %}">volver a pagina inicial</a>
-<a href="{% url 'pasteleria:frm_buscar_cliente' %}">volver al buscador</a>
+    <input type="submit"class="btn btn-primary  boton_com"  value="eliminar">
+</form><div class="row mover_I_25" style="margin-left: 5%; margin-right: 10%;"> 
+    <a class="btn btn-primary "  style="margin-left: 20%; margin-bottom: 5%;" href="{% url 'pasteleria:index' %}">volver a pagina inicial</a>
+   
+    <a  class="btn btn-primary  " style="margin-left: 20%; margin-bottom: 5%;" href="{% url 'pasteleria:frm_buscar_cliente' %}">volver al buscador</a>
+</div>
+</div> 
+
